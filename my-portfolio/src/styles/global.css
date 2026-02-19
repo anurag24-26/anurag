@@ -87,3 +87,38 @@ a:hover {
   font-size: 0.8rem;
   opacity: 0.55;
 }
+/* Mobile Responsive */
+@media (max-width: 640px) {
+
+  main {
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  p, li {
+    font-size: 0.9rem;
+  }
+
+  .small {
+    font-size: 0.75rem;
+  }
+
+  section {
+    margin-top: 2rem;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+}
