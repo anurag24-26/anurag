@@ -1,33 +1,29 @@
 ---
-import BaseLayout from "../layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro";
 ---
-<BaseLayout>
 
-<!-- Header -->
-<div class="center">
-  <h1>Anurag Tripathi</h1>
-  <p>Fullstack Developer</p>
+<Layout>
 
-  <p class="small">
-    anuragtripathi2602@gmail.com
-  </p>
+  <!-- Navigation  <nav>
+    <a href="/">home</a>
+    <a href="/blog">blog</a>
+    <a href="/guestbook">guestbook</a>
+  </nav>-->
+  
 
-  <div class="social-links small">
-    <a href="https://github.com/anurag24-26" target="_blank">GitHub</a>
-    <span> · </span>
-    <a href="https://www.linkedin.com/in/anurag-tripathi2602/" target="_blank">LinkedIn</a>
-    <span> · </span>
-    <a href="https://x.com/dev_Anurag2426" target="_blank">X</a>
-  </div>
-</div>
-
-  <!-- About / Skill Statement -->
+  <!-- Hero -->
   <section>
+  <h1>&lt;Anurag Tripathi /&gt;</h1>
+
     <p>
-      I build scalable and responsive full-stack web applications using
-      React, Node.js, MongoDB, and modern UI systems. I focus on clean
-      architecture, performance optimization, and creating seamless user
-      experiences across devices.
+      From India. Full-stack Developer building scalable web applications
+      with React, Node.js, MongoDB and modern UI systems.
+    </p>
+
+    <p style="margin-top: 1rem;">
+      <a href="mailto:anuragtripathi2602@gmail.com">Email</a> ·
+      <a href="https://github.com/anurag24-26" target="_blank">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/anurag-tripathi2602/" target="_blank">LinkedIn</a>
     </p>
   </section>
 
@@ -35,65 +31,50 @@ import BaseLayout from "../layouts/Layout.astro";
   <section>
     <h2>Projects</h2>
 
-  <p>
-      <strong>
-        <a href="https://github.com/anurag24-26/cpicalculator/" >
-          CPI Calculator Web App
-        </a>
-      </strong>
-    </p>
-    <p>
-      Lightweight and responsive CPI calculator allowing dynamic subject,
-      credit, and grade input for instant computation.
-    </p>
+    <div class="project">
+      <span class="project-title">CPI Calculator Web App</span>
+      <span class="project-links">
+        <a href="https://github.com/anurag24-26/cpicalculator">Code</a>
+      </span>
+      <p>
+        Lightweight and responsive CPI calculator allowing dynamic subject,
+        credit, and grade input for instant computation.
+      </p>
+    </div>
 
-    <br />
+    <div class="project">
+      <span class="project-title">Saraswati Coaching Center</span>
+      <span class="project-links">
+        <a href="https://github.com/anurag24-26/clientsite2">Code</a>
+      </span>
+      <p>
+        MERN stack project with admin dashboard for dynamic result
+        management and real-world deployment.
+      </p>
+    </div>
 
-    <p>
-      <strong>
-        <a href="https://github.com/anurag24-26/clientsite2" >
-          Saraswati Coaching Center
-        </a>
-      </strong>
-    </p>
-    <p>
-      MERN stack project with admin dashboard for dynamic result
-      management and real-world usage deployment.
-    </p>
-	<br/>
-    <p>
-      <strong>
-        <a href="https://github.com/anurag24-26/ecommerce-frontend/">
-          Shopee E-Commerce Web App
-        </a>
-      </strong>
-    </p>
-    <p>
-      Full-stack e-commerce platform with JWT authentication, role-based
-      dashboards, cart management, and secure REST APIs.
-    </p>
+    <div class="project">
+      <span class="project-title">Shopee E-Commerce Web App</span>
+      <span class="project-links">
+        <a href="https://github.com/anurag24-26/ecommerce-frontend">Code</a>
+      </span>
+      <p>
+        Full-stack e-commerce platform with JWT authentication,
+        cart management and secure REST APIs.
+      </p>
+    </div>
 
-    <br />
-
-    <p>
-      <strong>
-        <a href="https://github.com/anurag24-26/culinique">
-          GourmetFusion Restaurant Website
-        </a>
-      </strong>
-    </p>
-    <p>
-      Modern restaurant UI featuring smooth transitions, reusable
-      components, and mobile-first design principles.
-    </p>
-
-    <br />
-
-
-    <br />
-
-    
+    <div class="project">
+      <span class="project-title">GourmetFusion Restaurant Website</span>
+      <span class="project-links">
+        <a href="https://github.com/anurag24-26/culinique">Code</a>
+      </span>
+      <p>
+        Modern restaurant UI featuring smooth transitions,
+        reusable components and mobile-first design.
+      </p>
+    </div>
 
   </section>
 
-</BaseLayout>
+</Layout>

@@ -1,15 +1,147 @@
 ---
-import "../styles/global.css";
+const { title = "Anurag Tripathi" } = Astro.props;
 ---
 
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Anurag Tripathi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono&display=swap" rel="stylesheet" />
   </head>
+
   <body>
     <main>
       <slot />
     </main>
   </body>
 </html>
+
+<style is:global>
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0b0b0c;
+  --text: #eaeaea;
+  --muted: #8a8a8a;
+  --dim: #555;
+  --border: #1e1e1e;
+  --max-w: 680px;
+  --font: "DM Sans", system-ui, -apple-system, sans-serif;
+  --mono: "DM Mono", monospace;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  padding: 3.5rem 1.5rem;
+}
+
+main {
+  width: 100%;
+  max-width: var(--max-w);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Navigation */
+nav {
+  font-size: 0.9rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+/* Headings */
+h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--dim);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* Links */
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Projects */
+.project {
+  margin-bottom: 1.8rem;
+}
+
+.project-title {
+  font-weight: 500;
+}
+
+.project-links {
+  font-size: 0.9rem;
+  color: var(--dim);
+  margin-left: 1rem;
+}
+
+.project-links a {
+  color: var(--muted);
+}
+
+.project-links a:hover {
+  color: var(--text);
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 18px;
+  }
+
+  body {
+    padding: 2.5rem 1.2rem;
+  }
+}
+</style>

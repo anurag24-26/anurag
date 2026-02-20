@@ -11,7 +11,7 @@
   --text: #e8e8e8;
   --muted: #888;
   --dim: #555;
-  --max-w: 640px;
+  --max-w: 620px;
   --font: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: "DM Mono", "Fira Code", monospace;
 }
@@ -31,10 +31,9 @@ html {
 body {
   min-height: 100dvh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* Generous padding — text should never touch screen edges */
-  padding: clamp(2.5rem, 8vw, 4.5rem) clamp(1.5rem, 6vw, 2.5rem);
+  justify-content: center;
+  align-items: flex-start; /* prevents vertical squeeze */
+  padding: clamp(2rem, 6vw, 4rem) clamp(1.2rem, 5vw, 2.5rem);
 }
 
 /* ─── Layout ─────────────────────────────── */
@@ -253,11 +252,15 @@ footer {
 /* ─── Mobile tweaks ──────────────────────── */
 
 @media (max-width: 480px) {
-  /* Stack date below title on small phones */
+  html {
+    font-size: 18px;  /* slightly larger base for tiny screens */
+  }
   .entry-meta {
     flex-direction: column;
     gap: 0.2rem;
   }
+ 
+ 
 
   .social-links {
     gap: 1rem;
