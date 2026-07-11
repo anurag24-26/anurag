@@ -1,80 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import TrustBadges from "../components/TrustBadges.astro";
+import Services from "../components/Services.astro";
+import FeaturedWork from "../components/FeaturedWork.astro";
+import Process from "../components/Process.astro";
+import WhyWorkWithMe from "../components/WhyWorkWithMe.astro";
+import TechStack from "../components/TechStack.astro";
+import Resources from "../components/Resources.astro";
+import Contact from "../components/Contact.astro";
 ---
 
 <Layout>
-
-  <!-- Navigation  <nav>
-    <a href="/">home</a>
-    <a href="/blog">blog</a>
-    <a href="/guestbook">guestbook</a>
-  </nav>-->
-  
-
-  <!-- Hero -->
-  <section>
-  <h1>&lt;Anurag Tripathi /&gt;</h1>
-
-    <p>
-      From India. Full-stack Developer building scalable web applications
-      with React, Node.js, MongoDB and modern UI systems.
-    </p>
-
-    <p style="margin-top: 1rem;">
-      <a href="mailto:anuragtripathi2602@gmail.com">Email</a> ·
-      <a href="https://github.com/anurag24-26" target="_blank">GitHub</a> ·
-      <a href="https://www.linkedin.com/in/anurag-tripathi2602/" target="_blank">LinkedIn</a>
-    </p>
-  </section>
-
-  <!-- Projects -->
-  <section>
-    <h2>Projects</h2>
-
-    <div class="project">
-      <span class="project-title">CPI Calculator Web App</span>
-      <span class="project-links">
-        <a href="https://github.com/anurag24-26/cpicalculator">Code</a>
-      </span>
-      <p>
-        Lightweight and responsive CPI calculator allowing dynamic subject,
-        credit, and grade input for instant computation.
-      </p>
-    </div>
-
-    <div class="project">
-      <span class="project-title">Saraswati Coaching Center</span>
-      <span class="project-links">
-        <a href="https://github.com/anurag24-26/clientsite2">Code</a>
-      </span>
-      <p>
-        MERN stack project with admin dashboard for dynamic result
-        management and real-world deployment.
-      </p>
-    </div>
-
-    <div class="project">
-      <span class="project-title">Shopee E-Commerce Web App</span>
-      <span class="project-links">
-        <a href="https://github.com/anurag24-26/ecommerce-frontend">Code</a>
-      </span>
-      <p>
-        Full-stack e-commerce platform with JWT authentication,
-        cart management and secure REST APIs.
-      </p>
-    </div>
-
-    <div class="project">
-      <span class="project-title">GourmetFusion Restaurant Website</span>
-      <span class="project-links">
-        <a href="https://github.com/anurag24-26/culinique">Code</a>
-      </span>
-      <p>
-        Modern restaurant UI featuring smooth transitions,
-        reusable components and mobile-first design.
-      </p>
-    </div>
-
-  </section>
-
+  <Hero />
+  <TrustBadges />
+  <Services />
+  <FeaturedWork />
+  <Process />
+  <WhyWorkWithMe />
+  <TechStack />
+  <Resources />
+  <Contact />
 </Layout>

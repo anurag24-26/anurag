@@ -1,0 +1,50 @@
+---
+import { projects } from "../data/site";
+import ProjectCard from "./ProjectCard.astro";
+
+const clientWork = projects.filter((p) => p.category === "client");
+const personalWork = projects.filter((p) => p.category === "personal");
+---
+
+<section id="work">
+  <div class="container">
+    <p class="eyebrow">Featured Work</p>
+    <h2 class="section-title">Products I've shipped</h2>
+    <p class="section-sub">
+      A mix of client engagements and personal builds — each one solving a
+      real problem end to end.
+    </p>
+
+    <h3 class="work-group-title mono">Client Work</h3>
+    <div class="grid grid-2 work-grid">
+      {clientWork.map((project) => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
+
+    <h3 class="work-group-title mono">Personal Projects</h3>
+    <div class="grid grid-3 work-grid">
+      {personalWork.map((project) => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .work-group-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-dim);
+    margin: 3rem 0 1.25rem;
+  }
+
+  .work-group-title:first-of-type {
+    margin-top: 0;
+  }
+
+  .work-grid {
+    margin-bottom: 1rem;
+  }
+</style>

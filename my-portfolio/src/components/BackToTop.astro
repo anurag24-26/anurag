@@ -1,0 +1,57 @@
+---
+---
+<button id="back-to-top" class="back-to-top" aria-label="Back to top" type="button">
+  ↑
+</button>
+
+<style>
+  .back-to-top {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+    font-size: 1.1rem;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), border-color 0.2s var(--ease);
+    z-index: 55;
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .back-to-top:hover {
+    border-color: var(--accent);
+  }
+</style>
+
+<script>
+  const btn = document.getElementById("back-to-top");
+
+  function toggle() {
+    if (!btn) return;
+    if (window.scrollY > 480) {
+      btn.classList.add("visible");
+    } else {
+      btn.classList.remove("visible");
+    }
+  }
+
+  btn?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  document.addEventListener("scroll", toggle, { passive: true });
+  document.addEventListener("astro:page-load", toggle);
+  toggle();
+</script>

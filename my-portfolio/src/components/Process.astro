@@ -1,0 +1,68 @@
+---
+import { processSteps } from "../data/site";
+---
+
+<section id="process">
+  <div class="container">
+    <p class="eyebrow">How I Work</p>
+    <h2 class="section-title">A clear, predictable process</h2>
+    <p class="section-sub">
+      No surprises. You always know what's happening and what's next.
+    </p>
+
+    <ol class="timeline">
+      {processSteps.map((step, i) => (
+        <li class="timeline-step reveal">
+          <span class="timeline-index mono">{String(i + 1).padStart(2, "0")}</span>
+          <div>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    list-style: none;
+    border-left: 1px solid var(--border);
+    margin-left: 0.6rem;
+  }
+
+  .timeline-step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.25rem 0 1.25rem 1.75rem;
+    position: relative;
+  }
+
+  .timeline-step::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 1.6rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--bg), 0 0 12px var(--accent);
+  }
+
+  .timeline-index {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    padding-top: 0.15rem;
+    min-width: 2rem;
+  }
+
+  .timeline-step h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .timeline-step p {
+    font-size: 0.92rem;
+  }
+</style>

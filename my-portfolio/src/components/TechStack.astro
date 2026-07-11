@@ -1,0 +1,29 @@
+---
+import { techStack } from "../data/site";
+---
+
+<section id="stack">
+  <div class="container">
+    <p class="eyebrow">Tech Stack</p>
+    <h2 class="section-title">Tools I actively use</h2>
+
+    <div class="stack-row reveal">
+      {techStack.map((tech) => (
+        <span class="badge stack-badge mono">{tech}</span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .stack-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .stack-badge {
+    font-size: 0.85rem;
+    padding: 0.55rem 1rem;
+  }
+</style>

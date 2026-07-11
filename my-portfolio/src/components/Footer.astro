@@ -1,0 +1,45 @@
+---
+import { profile } from "../data/site";
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="mono dim">© {year} {profile.name}</p>
+    <div class="footer-links">
+      <a href={`mailto:${profile.email}`}>Email</a>
+      <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: color 0.2s var(--ease);
+  }
+
+  .footer-links a:hover {
+    color: var(--text);
+  }
+</style>

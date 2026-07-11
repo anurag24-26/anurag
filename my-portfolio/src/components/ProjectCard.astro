@@ -1,0 +1,149 @@
+---
+import type { Project } from "../data/site";
+export interface Props {
+  project: Project;
+}
+const { project } = Astro.props;
+---
+
+<article class="project-card reveal">
+  <div class="project-shot" aria-hidden="true">
+    <span class="mono project-shot-label">{project.title}</span>
+  </div>
+
+  <div class="project-body">
+    <div class="project-head">
+      <h3>{project.title}</h3>
+      {project.featured && <span class="badge">Client Work</span>}
+    </div>
+
+    <p class="project-summary">{project.summary}</p>
+
+    <div class="project-detail">
+      <p><span class="detail-label mono">Challenge</span> {project.challenge}</p>
+      <p><span class="detail-label mono">Solution</span> {project.solution}</p>
+    </div>
+
+    <ul class="project-features">
+      {project.features.map((f) => (
+        <li>{f}</li>
+      ))}
+    </ul>
+
+    <div class="project-tech">
+      {project.tech.map((t) => (
+        <span class="badge">{t}</span>
+      ))}
+    </div>
+
+    <div class="btn-row project-links">
+      {project.github && (
+        <a href={project.github} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub</a>
+      )}
+      {project.live && (
+        <a href={project.live} target="_blank" rel="noopener noreferrer" class="btn btn-primary">Live Demo</a>
+      )}
+    </div>
+  </div>
+</article>
+
+<style>
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+  }
+
+  .project-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-4px);
+  }
+
+  .project-shot {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      linear-gradient(135deg, rgba(124,140,255,0.16), rgba(124,140,255,0.02)),
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 14px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-shot-label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+
+  .project-body {
+    padding: 1.5rem;
+  }
+
+  .project-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-head h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-summary {
+    font-size: 0.92rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-detail p {
+    font-size: 0.88rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .detail-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin-bottom: 0.15rem;
+  }
+
+  .project-features {
+    list-style: none;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .project-features li {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .project-features li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--text-dim);
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-tech .badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+  }
+</style>

@@ -1,0 +1,41 @@
+---
+import { resources } from "../data/site";
+---
+
+<section id="resources">
+  <div class="container">
+    <p class="eyebrow">Resources</p>
+    <h2 class="section-title">Notes, coming soon</h2>
+    <p class="section-sub">
+      Short, practical write-ups on tools and patterns I actually use.
+      New posts will show up here.
+    </p>
+
+    <div class="grid grid-2">
+      {resources.map((r) => (
+        <div class="card resource-card reveal">
+          <span class="badge">Coming soon</span>
+          <h3>{r.title}</h3>
+          <p>{r.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .resource-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: flex-start;
+  }
+
+  .resource-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .resource-card p {
+    font-size: 0.92rem;
+  }
+</style>

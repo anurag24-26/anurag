@@ -1,0 +1,36 @@
+---
+import { services } from "../data/site";
+import Icon from "./Icon.astro";
+---
+
+<section id="services">
+  <div class="container">
+    <p class="eyebrow">Services</p>
+    <h2 class="section-title">What I can build for you</h2>
+    <p class="section-sub">
+      Focused engineering help across the stack — from a first working
+      product to the internal tools that keep your team moving.
+    </p>
+
+    <div class="grid grid-3">
+      {services.map((service) => (
+        <div class="card service-card reveal">
+          <Icon name={service.icon as any} />
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-card h3 {
+    font-size: 1.05rem;
+    margin: 1rem 0 0.5rem;
+  }
+
+  .service-card p {
+    font-size: 0.92rem;
+  }
+</style>

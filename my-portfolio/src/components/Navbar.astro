@@ -1,0 +1,69 @@
+---
+import { profile } from "../data/site";
+---
+
+<header class="nav-wrap">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo mono">AT<span class="dim">.</span></a>
+
+    <nav aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#resources">Resources</a>
+    </nav>
+
+    <a href="#contact" class="btn btn-primary nav-cta">Let's Talk</a>
+  </div>
+</header>
+
+<style>
+  .nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(8, 8, 10, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .nav-logo {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav a {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    transition: color 0.2s var(--ease);
+  }
+
+  nav a:hover {
+    color: var(--text);
+  }
+
+  .nav-cta {
+    padding: 0.55rem 1.15rem;
+    font-size: 0.88rem;
+  }
+
+  @media (max-width: 720px) {
+    nav {
+      display: none;
+    }
+  }
+</style>

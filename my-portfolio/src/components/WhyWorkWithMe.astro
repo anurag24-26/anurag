@@ -1,0 +1,26 @@
+---
+import { whyWorkWithMe } from "../data/site";
+---
+
+<section id="why">
+  <div class="container">
+    <p class="eyebrow">Why Work With Me</p>
+    <h2 class="section-title">Built for teams who need to move fast</h2>
+
+    <div class="grid grid-3">
+      {whyWorkWithMe.map((item) => (
+        <div class="card reveal">
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+</style>

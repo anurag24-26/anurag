@@ -1,0 +1,120 @@
+---
+import { profile } from "../data/site";
+---
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy reveal">
+      <p class="eyebrow">Available for freelance work</p>
+      <h1>{profile.tagline}</h1>
+      <p class="hero-sub">{profile.subtext}</p>
+
+      <div class="btn-row hero-cta">
+        <a href="#contact" class="btn btn-primary">Let's Build Something</a>
+        <a href="#work" class="btn btn-secondary">View Projects</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" aria-hidden="true">
+      <div class="editor-mock">
+        <div class="editor-bar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="editor-tab mono">app.tsx</span>
+        </div>
+        <div class="editor-body mono">
+          <p><span class="tok-kw">function</span> <span class="tok-fn">buildProduct</span>(<span class="tok-arg">idea</span>) {"{"}</p>
+          <p class="indent"><span class="tok-kw">const</span> mvp = design(idea);</p>
+          <p class="indent"><span class="tok-kw">const</span> app = ship(mvp);</p>
+          <p class="indent"><span class="tok-kw">return</span> app.<span class="tok-fn">deployed</span>();</p>
+          <p>{"}"}</p>
+          <p class="dim">&nbsp;</p>
+          <p><span class="tok-kw">export default</span> buildProduct(<span class="tok-str">"your idea"</span>);</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: clamp(3rem, 8vw, 6rem);
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    max-width: 520px;
+    margin-top: 1.25rem;
+  }
+
+  .hero-cta {
+    margin-top: 2.25rem;
+  }
+
+  .editor-mock {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-strong);
+    background: linear-gradient(180deg, var(--bg-elevated), var(--surface));
+    box-shadow: 0 30px 80px -30px rgba(124, 140, 255, 0.25), 0 0 0 1px rgba(255,255,255,0.02);
+    overflow: hidden;
+    transform: rotate(-1deg);
+  }
+
+  .editor-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-elevated);
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .dot-red { background: #ff5f57; }
+  .dot-yellow { background: #febc2e; }
+  .dot-green { background: #28c840; }
+
+  .editor-tab {
+    margin-left: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+  }
+
+  .editor-body {
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    line-height: 1.9;
+  }
+
+  .editor-body .indent {
+    padding-left: 1.4rem;
+  }
+
+  .tok-kw { color: #c792ea; }
+  .tok-fn { color: #82aaff; }
+  .tok-arg { color: #f78c6c; }
+  .tok-str { color: #c3e88d; }
+
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+    }
+    .editor-mock {
+      transform: none;
+    }
+  }
+</style>
